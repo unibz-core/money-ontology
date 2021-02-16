@@ -5,11 +5,13 @@ ROM-VC is a well-founded reference ontology, specified in OntoUML, that formally
 ## Project Structure
 
 * [/ontouml](/ontouml) contains files related to the conceptual version of ROM-VC, which was modelled in OntoUML.
+* [/owl](/owl) contains files related to the gUFO-based implementation of ROT, represented in OWL.
 
 
 ## Reusing .vpp files
 
 * To open and edit .vpp files, use [Visual Paradigm](https://www.visual-paradigm.com)
+* To open and edit .ttl files, use [Protégé](https://protege.stanford.edu/)
 
 ## Built With
 
