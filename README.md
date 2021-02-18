@@ -1,4 +1,4 @@
-# ROME: A Reference Ontology of Money and virtual currEncies
+# ROME: A Reference Ontology of Money and Virtual CurrEncies
 
 ROME is a well-founded reference ontology, specified in OntoUML, that formally characterizes the concept of money, currency, virtual currencies and related concepts. 
 
