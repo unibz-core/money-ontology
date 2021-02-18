@@ -1,11 +1,11 @@
-# ROM-VC: A Reference Ontology of Money and Virtual Currencies
+# ROME: A Reference Ontology of Money and virtual currEncies
 
-ROM-VC is a well-founded reference ontology, specified in OntoUML, that formally characterizes the concept of money, currency, virtual currencies and related concepts. 
+ROME is a well-founded reference ontology, specified in OntoUML, that formally characterizes the concept of money, currency, virtual currencies and related concepts. 
 
 ## Project Structure
 
-* [/ontouml](/ontouml) contains files related to the conceptual version of ROM-VC, which was modelled in OntoUML.
-* [/owl](/owl) contains files related to the gUFO-based implementation of ROM-VC, represented in OWL.
+* [/ontouml](/ontouml) contains files related to the conceptual version of ROME, which was modelled in OntoUML.
+* [/owl](/owl) contains files related to the gUFO-based implementation of ROME, represented in OWL.
 
 
 ## Reusing .vpp files
