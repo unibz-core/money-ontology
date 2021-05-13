@@ -33,6 +33,8 @@ ROME is a well-founded reference ontology, specified in OntoUML, that formally c
 
 - Amaral G., Sales T.P., Guizzardi G., Porello D., Guarino N. (2020) **Towards a Reference Ontology of Money: Monetary Objects, Currencies and Related Concepts.**. In: Proceedings of 14th International Workshop on Value Modelling and Business Ontologies, Brussels, Belgium, January 16-17, 2020. VMBO 2020. [http://ceur-ws.org/Vol-2574/short17.pdf](http://ceur-ws.org/Vol-2574/short17.pdf)
 
+- Amaral G., Sales T.P., Guizzardi G. (2021) **Towards Ontological Foundations for Central Bank Digital Currencies.**. In: Proceedings of 15th International Workshop on Value Modelling and Business Ontologies, Bolzano, Italy, March 4-5, 2021. VMBO 2021. [http://ceur-ws.org/Vol-2835/paper9.pdf](http://ceur-ws.org/Vol-2835/paper9.pdf)
+
 - Amaral G., Sales T.P., Guizzardi G., Porello D. (2019) **Towards a Reference Ontology of Trust**. In: Panetto H., Debruyne C., Hepp M., Lewis D., Ardagna C., Meersman R. (eds) On the Move to Meaningful Internet Systems: OTM 2019 Conferences. OTM 2019. Lecture Notes in Computer Science, vol 11877. Springer, Cham. [https://doi.org/10.1007/978-3-030-33246-4_1](https://doi.org/10.1007/978-3-030-33246-4_1)
 
 
