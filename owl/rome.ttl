@@ -1,5 +1,5 @@
 @prefix : <https://purl.org/krdb-core/rome#> .
-@prefix rom: <https://purl.org/krdb-core/rome#>.
+@prefix rome: <https://purl.org/krdb-core/rome#>.
 @prefix rot: <https://purl.org/krdb-core/rot#>.
 @prefix gufo: <http://purl.org/nemo/gufo#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
