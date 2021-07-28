@@ -1,12 +1,11 @@
-@prefix : <https://purl.org/krdb-core/rome#> .
-@prefix rome: <https://purl.org/krdb-core/rome#>.
+@prefix : <https://purl.org/krdb-core/rome#>.
 @prefix rot: <https://purl.org/krdb-core/rot#>.
+@prefix rome: <https://purl.org/krdb-core/rome#>.
 @prefix gufo: <http://purl.org/nemo/gufo#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@base <https://purl.org/krdb-core/rome> .
 
 
 <https://purl.org/krdb-core/rome> rdf:type owl:Ontology ;
@@ -24,171 +23,164 @@ rdfs:label "Reference Ontology of Money and Virtual CurrEncies"@en .
 
 
 
-##################################################################    Classes#################################################################      
-    
-:char rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
-    rdfs:subClassOf gufo:QualityValue;
-    rdfs:label "char".
-:void rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
-    rdfs:subClassOf gufo:QualityValue;
-    rdfs:label "void".
-rome:Object rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Object;
-    rdfs:label "Object".
-rome:ObjectType rdf:type owl:NamedIndividual;
-    rdfs:subClassOf gufo:ConcreteIndividualType;
-    rdfs:label "Object Type".
-rome:Agent rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Object;
-    rdfs:label "Agent".
-rome:SocialObject rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
-    rdfs:label "Social Object".
-rome:NormativeDescription rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Normative Description".
-rome:MonetaryObject rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Monetary Object".
-rome:MonetaryObjectType rdf:type owl:NamedIndividual;
-    rdfs:label "Monetary Object Type".
-rome:MoneyStatusFunctionDescription rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
-    rdfs:label "Money Status Function Description".
-rome:PhysicalMonetaryObject rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
-    rdfs:label "Physical Monetary Object".
-rome:DigitalMonetaryObject rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
-    rdfs:label "Digital Monetary Object".
-rome:ValidMonetaryObject rdf:type owl:Class, gufo:PhaseMixin, owl:NamedIndividual;
-    rdfs:label "Valid Monetary Object".
-rome:NotValidMonetaryObject rdf:type owl:Class, gufo:PhaseMixin, owl:NamedIndividual;
-    rdfs:label "Not Valid Monetary Object".
-rome:Currency rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Currency".
-rome:CurrencyQualitySpaceStructure rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Currency Quality Space Structure".
-rome:CurrencyQualitySpace rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
-    rdfs:subClassOf gufo:QualityValue;
-    rdfs:label "Currency Quality Space".
-rome:TokenBasedCreditDebt rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Token-based Credit/Debt".
-rome:PurchasingPower rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:IntrinsicMode;
-    rdfs:label "Purchasing Power".
-rome:AccountBasedCreditDebt rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Account-based Credit/Debt".
-rome:AggregatedExchangePower rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:IntrinsicMode;
-    rdfs:label "Aggregated Exchange Power".
-rome:Control rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Relator;
-    rdfs:label "Control".
-rome:ExchangePower rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:IntrinsicMode;
-    rdfs:label "Exchange Power".
-rome:FIMonetaryCredit rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Quality;
-    rdfs:label "FI Monetary Credit".
-rome:FIMonetaryDebt rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Quality;
-    rdfs:label "FI Monetary Debt".
-rome:FinancialInstitution rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Financial Institution".
-rome:FinancialInstitutionCreditDebtRelation rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Relator;
-    rdfs:label "Financial Institution Credit/Debt Relation".
-rome:MonetaryAuthority rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Monetary Authority".
-rome:MonetaryAuthorityCreditDebtRelation rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Relator;
-    rdfs:label "Monetary Authority Credit/Debt Relation".
-rome:MonetaryCredit rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Quality;
-    rdfs:label "Monetary Credit".
-rome:MonetaryDebt rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Quality;
-    rdfs:label "Monetary Debt".
-rome:MonetarySystem rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Monetary System".
-rome:Price rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Quality;
-    rdfs:label "Price".
-rome:Pricing rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Relator;
-    rdfs:label "Pricing".
-rome:VirtualCurrency rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Virtual currency".
-rome:VirtualCurrencyQualitySpace rdf:type owl:Class, gufo:AbstractIndividualType, owl:NamedIndividual;
-    rdfs:subClassOf gufo:QualityValue;
-    rdfs:label "Virtual Currency Quality Space".
-rome:VirtualCurrencyQualityStructure rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Virtual Currency Quality Structure".
-rome:VirtualCurrencySchemeDescription rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
-    rdfs:label "Virtual Currency Scheme Description".
-rome:VirtualCurrencyToken rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Virtual Currency Token".
-rome:VirtualCurrencyTokenType rdf:type owl:NamedIndividual;
-    rdfs:label "Virtual Currency Token Type".
-rome:VirtualCurrencySystem rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:FunctionalComplex;
-    rdfs:label "Virtual Currency System".
-rome:BidirectionalFlowVCToken rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
-    rdfs:label "Bidirectional Flow VC Token".
-rome:BidirectionalVCControl rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Relator;
-    rdfs:label "Bidirectional VC Control".
-rome:ClosedVCToken rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
-    rdfs:label "Closed VC Token".
-rome:ExchangePowerInCurrency rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:IntrinsicMode;
-    rdfs:label "Exchange Power in Currency".
-rome:ExchangePowerInVC rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:IntrinsicMode;
-    rdfs:label "Exchange Power in VC".
-rome:PurchasebleVCToken rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
-    rdfs:label "Purchaseble VC Token".
-rome:UnidirectionalFlowVCToken rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
-    rdfs:label "Unidirectional Flow VC Token".
-rome:VCControl rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Relator;
-    rdfs:label "VC Control".
+<https://purl.org/krdb-core/rome> rdf:type owl:Ontology;
+    owl:imports gufo:.  
 rot:InstitutionBasedTrust rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:ExtrinsicMode;
-    rdfs:label "Institution-based Trust".
-    
-
+    rdfs:label "Institution-based Trust"@en.
+rome:Object rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Object;
+    rdfs:label "Object"@en.
+rome:ObjectType rdf:type owl:NamedIndividual;
+    rdfs:subClassOf gufo:ConcreteIndividualType;
+    rdfs:label "Object Type"@en.
+rome:Agent rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Object;
+    rdfs:label "Agent"@en.
+rome:NormativeDescription rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Normative Description"@en.
+rome:SocialObject rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Social Object"@en.
+rome:MonetaryObject rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Monetary Object"@en.
+rome:MonetaryObjectType rdf:type owl:NamedIndividual;
+    rdfs:label "Monetary Object Type"@en.
+rome:MoneyStatusFunctionDescription rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Money Status Function Description"@en.
+rome:PhysicalMonetaryObject rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:label "Physical Monetary Object"@en.
+rome:DigitalMonetaryObject rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:label "Digital Monetary Object"@en.
+rome:ValidMonetaryObject rdf:type owl:Class, gufo:PhaseMixin, owl:NamedIndividual;
+    rdfs:label "Valid Monetary Object"@en.
+rome:NotValidMonetaryObject rdf:type owl:Class, gufo:PhaseMixin, owl:NamedIndividual;
+    rdfs:label "Not Valid Monetary Object"@en.
+rome:Currency rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Currency"@en.
+rome:CurrencyQualitySpaceStructure rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Currency Quality Space Structure"@en.
+rome:MonetarySystem rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Monetary System"@en.
+rome:Control rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Control"@en.
+rome:MonetaryAuthorityCreditDebtRelation rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Monetary Authority Credit/Debt Relation"@en.
+rome:MonetaryCredit rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Quality;
+    rdfs:label "Monetary Credit"@en.
+rome:MonetaryDebt rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Quality;
+    rdfs:label "Monetary Debt"@en.
+rome:MonetaryAuthority rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Monetary Authority"@en.
+rome:TokenBasedCreditDebt rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Token-based Credit/Debt"@en.
+rome:AccountBasedCreditDebt rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Account-based Credit/Debt"@en.
+rome:FinancialInstitutionCreditDebtRelation rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Financial Institution Credit/Debt Relation"@en.
+rome:FIMonetaryCredit rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Quality;
+    rdfs:label "FI Monetary Credit"@en.
+rome:FIMonetaryDebt rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Quality;
+    rdfs:label "FI Monetary Debt"@en.
+rome:FinancialInstitution rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Financial Institution"@en.
+rome:Pricing rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Pricing"@en.
+rome:Price rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Quality;
+    rdfs:label "Price"@en.
+rome:PurchasingPower rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Purchasing Power"@en.
+rome:ExchangePower rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Exchange Power"@en.
+rome:AggregatedExchangePower rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Aggregated Exchange Power"@en.
+rome:VirtualCurrencyToken rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Virtual Currency Token"@en.
+rome:VirtualCurrencyTokenType rdf:type owl:NamedIndividual;
+    rdfs:label "Virtual Currency Token Type"@en.
+rome:VirtualCurrencySchemeDescription rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Virtual Currency Scheme Description"@en.
+rome:VirtualCurrencyQualityStructure rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Virtual Currency Quality Structure"@en.
+rome:VirtualCurrency rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Virtual currency"@en.
+rome:VirtualCurrencySystem rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Virtual Currency System"@en.
+rome:PurchasebleVCToken rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:label "Purchaseble VC Token"@en.
+rome:ClosedVCToken rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:label "Closed VC Token"@en.
+rome:UnidirectionalFlowVCToken rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:label "Unidirectional Flow VC Token"@en.
+rome:BidirectionalFlowVCToken rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:label "Bidirectional Flow VC Token"@en.
+rome:VCControl rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "VC Control"@en.
+rome:ExchangePowerInVC rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Exchange Power in VC"@en.
+rome:BidirectionalVCControl rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Bidirectional VC Control"@en.
+rome:ExchangePowerInCurrency rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Exchange Power in Currency"@en.
 rome:MonetaryObject rdfs:subClassOf rome:Object.
 rome:MonetaryObjectType rdfs:subClassOf rome:ObjectType.
 rome:SocialObject rdfs:subClassOf rome:Object.
 rome:NormativeDescription rdfs:subClassOf rome:SocialObject.
 rome:MoneyStatusFunctionDescription rdfs:subClassOf rome:NormativeDescription.
-rome:PhysicalMonetaryObject rdfs:subClassOf rome:MonetaryObject.
-rome:DigitalMonetaryObject rdfs:subClassOf rome:MonetaryObject.
-rome:NotValidMonetaryObject rdfs:subClassOf rome:PhysicalMonetaryObject.
-rome:ValidMonetaryObject rdfs:subClassOf rome:PhysicalMonetaryObject.
 rome:Currency rdfs:subClassOf rome:SocialObject.
 rome:CurrencyQualitySpaceStructure rdfs:subClassOf rome:SocialObject.
 rome:MonetaryAuthority rdfs:subClassOf rome:Agent.
-rome:TokenBasedCreditDebt rdfs:subClassOf rome:MonetaryAuthorityCreditDebtRelation.
-rome:AccountBasedCreditDebt rdfs:subClassOf rome:MonetaryAuthorityCreditDebtRelation.
 rome:FinancialInstitution rdfs:subClassOf rome:Agent.
 rome:VirtualCurrencyTokenType rdfs:subClassOf rome:ObjectType.
 rome:VirtualCurrencyToken rdfs:subClassOf rome:Object.
 rome:VirtualCurrencySchemeDescription rdfs:subClassOf rome:NormativeDescription.
 rome:VirtualCurrencyQualityStructure rdfs:subClassOf rome:SocialObject.
 rome:VirtualCurrency rdfs:subClassOf rome:SocialObject.
+rome:PhysicalMonetaryObject rdfs:subClassOf rome:MonetaryObject.
+rome:DigitalMonetaryObject rdfs:subClassOf rome:MonetaryObject.
+rome:NotValidMonetaryObject rdfs:subClassOf rome:PhysicalMonetaryObject.
+rome:ValidMonetaryObject rdfs:subClassOf rome:PhysicalMonetaryObject.
+rome:TokenBasedCreditDebt rdfs:subClassOf rome:MonetaryAuthorityCreditDebtRelation.
+rome:AccountBasedCreditDebt rdfs:subClassOf rome:MonetaryAuthorityCreditDebtRelation.
 rome:PurchasebleVCToken rdfs:subClassOf rome:VirtualCurrencyToken.
 rome:ClosedVCToken rdfs:subClassOf rome:VirtualCurrencyToken.
 rome:UnidirectionalFlowVCToken rdfs:subClassOf rome:PurchasebleVCToken.
 rome:BidirectionalFlowVCToken rdfs:subClassOf rome:PurchasebleVCToken.
-
-
+[ rdf:type owl:AllDisjointClasses ] owl:members (rome:AccountBasedCreditDebt rome:TokenBasedCreditDebt).
+rome:VirtualCurrencyToken owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:unionOf (rome:ClosedVCToken rome:PurchasebleVCToken)
+].
+rome:PurchasebleVCToken owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:unionOf (rome:BidirectionalFlowVCToken rome:UnidirectionalFlowVCToken)
+].
 rome:MonetaryObject owl:equivalentClass [
   rdf:type owl:Class;
   owl:unionOf (rome:DigitalMonetaryObject rome:PhysicalMonetaryObject)
@@ -197,569 +189,378 @@ rome:PhysicalMonetaryObject owl:equivalentClass [
   rdf:type owl:Class;
   owl:unionOf (rome:NotValidMonetaryObject rome:ValidMonetaryObject)
 ].
-rome:MonetaryObject owl:equivalentClass [
-  rdf:type owl:Class;
-  owl:unionOf (rome:DigitalMonetaryObject rome:PhysicalMonetaryObject)
-].
-rome:PhysicalMonetaryObject owl:equivalentClass [
-  rdf:type owl:Class;
-  owl:unionOf (rome:NotValidMonetaryObject rome:ValidMonetaryObject)
-].
-
-
-
-##################################################################    Object Properties#################################################################
-
 <monetaryObject:nominal_value> rdfs:domain rome:MonetaryObject;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "nominal_value".
+    rdfs:label "nominal_value"@en.
 <digitalMonetaryObject:exchange_value> rdfs:domain rome:DigitalMonetaryObject;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "exchange_value".
+    rdfs:label "exchange_value"@en.
 <validMonetaryObject:exchange_value> rdfs:domain rome:ValidMonetaryObject;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "exchange_value".
-<fIMonetaryCredit:credit_value> rdfs:domain rome:FIMonetaryCredit;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "credit_value".
-<fIMonetaryDebt:debt_value> rdfs:domain rome:FIMonetaryDebt;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "debt_value".
+    rdfs:label "exchange_value"@en.
 <monetaryCredit:credit_value> rdfs:domain rome:MonetaryCredit;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "credit_value".
+    rdfs:label "credit_value"@en.
 <monetaryDebt:debt_value> rdfs:domain rome:MonetaryDebt;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "debt_value".
+    rdfs:label "debt_value"@en.
+<fIMonetaryCredit:credit_value> rdfs:domain rome:FIMonetaryCredit;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "credit_value"@en.
+<fIMonetaryDebt:debt_value> rdfs:domain rome:FIMonetaryDebt;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "debt_value"@en.
 <price:price_value> rdfs:domain rome:Price;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "price_value".
+    rdfs:label "price_value"@en.
 <virtualCurrencyToken:vc_token_value> rdfs:domain rome:VirtualCurrencyToken;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "vc_token_value".
-<exchangePowerInCurrency:exchange_power_in_currency_value> rdfs:domain rome:ExchangePowerInCurrency;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "exchange_power_in_currency_value".
-<exchangePowerInVC:exchange_power_in_vc_value> rdfs:domain rome:ExchangePowerInVC;
-    rdf:type owl:DatatypeProperty;
-    rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "exchange_power_in_vc_value".
+    rdfs:label "vc_token_value"@en.
 <purchasebleVCToken:vc_token_price> rdfs:domain rome:PurchasebleVCToken;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
-    rdfs:label "vc_token_price".
+    rdfs:label "vc_token_price"@en.
+<exchangePowerInVC:exchange_power_in_vc_value> rdfs:domain rome:ExchangePowerInVC;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "exchange_power_in_vc_value"@en.
+<exchangePowerInCurrency:exchange_power_in_currency_value> rdfs:domain rome:ExchangePowerInCurrency;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "exchange_power_in_currency_value"@en.
 rome:Object gufo:categorizes rome:ObjectType.
+rome:recognizedBy rdf:type owl:ObjectProperty;
+    rdfs:domain rome:NormativeDescription;
+    rdfs:range rome:Agent;
+    rdfs:label "recognized by"@en.
+rome:isComponentOf_1 rdf:type owl:ObjectProperty;
+    rdfs:domain rome:Agent;
+    rdfs:range rome:MonetarySystem;
+    rdfs:label "is component of"@en.
+rome:isComponentOf_3 rdf:type owl:ObjectProperty;
+    rdfs:domain rome:NormativeDescription;
+    rdfs:range rome:MonetarySystem;
+    rdfs:label "is component of"@en.
+rome:isComponentOf_2 rdf:type owl:ObjectProperty;
+    rdfs:domain rome:NormativeDescription;
+    rdfs:range rome:VirtualCurrencySystem;
+    rdfs:label "is component of"@en.
+rome:isComponentOf rdf:type owl:ObjectProperty;
+    rdfs:domain rome:Agent;
+    rdfs:range rome:VirtualCurrencySystem;
+    rdfs:label "is component of"@en.
 rome:MonetaryObject gufo:categorizes rome:MonetaryObjectType.
-:defines_3 rdf:type owl:ObjectProperty;
+rome:defines_3 rdf:type owl:ObjectProperty;
     rdfs:domain rome:MoneyStatusFunctionDescription;
     rdfs:range rome:MonetaryObjectType;
-    rdfs:label "defines".
-:isComponentOfCurrency rdf:type owl:ObjectProperty;
+    rdfs:label "defines"@en.
+rome:admits_2 rdf:type owl:ObjectProperty;
     rdfs:domain rome:MonetaryObjectType;
     rdfs:range rome:Currency;
-    rdfs:label "is component of currency";
-    rdfs:subPropertyOf gufo:isComponentOf.
-:defines_2 rdf:type owl:ObjectProperty;
+    rdfs:label "admits"@en.
+rome:defines_2 rdf:type owl:ObjectProperty;
     rdfs:domain rome:MoneyStatusFunctionDescription;
     rdfs:range rome:CurrencyQualitySpaceStructure;
-    rdfs:label "defines".
-:isComponentOfCurrency_1 rdf:type owl:ObjectProperty;
+    rdfs:label "defines"@en.
+rome:admits_3 rdf:type owl:ObjectProperty;
     rdfs:domain rome:CurrencyQualitySpaceStructure;
     rdfs:range rome:Currency;
-    rdfs:label "is component of currency";
-    rdfs:subPropertyOf gufo:isComponentOf.
-:defines_5 rdf:type owl:ObjectProperty;
+    rdfs:label "admits"@en.
+rome:defines_5 rdf:type owl:ObjectProperty;
     rdfs:domain rome:MoneyStatusFunctionDescription;
     rdfs:range rome:Currency;
-    rdfs:label "defines".
-:structures rdf:type owl:ObjectProperty;
+    rdfs:label "defines"@en.
+rome:structures rdf:type owl:ObjectProperty;
     rdfs:domain rome:CurrencyQualitySpaceStructure;
     rdfs:range rome:CurrencyQualitySpace;
-    rdfs:label "structures".
-:recognizedBy rdf:type owl:ObjectProperty;
-    rdfs:domain rome:NormativeDescription;
-    rdfs:range rome:Agent;
-    rdfs:label "recognized by".
-:inheresIn_9 rdf:type owl:ObjectProperty;
-    rdfs:domain rot:InstitutionBasedTrust;
-    rdfs:range rome:Agent;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:externalyDependentOn rdf:type owl:ObjectProperty;
-    rdfs:domain rot:InstitutionBasedTrust;
-    rdfs:range rome:MonetarySystem;
-    rdfs:label "externaly dependent on";
-    rdfs:subPropertyOf gufo:externallyDependsOn.
-:isComponentOf_1 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:Agent;
-    rdfs:range rome:MonetarySystem;
-    rdfs:label "is component of";
-    rdfs:subPropertyOf gufo:isObjectProperPartOf.
-:isComponentOf_3 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:NormativeDescription;
-    rdfs:range rome:MonetarySystem;
-    rdfs:label "is component of";
-    rdfs:subPropertyOf gufo:isObjectProperPartOf.
-:digitalMonetaryObjectMediatesControl rdf:type owl:ObjectProperty;
-    rdfs:domain rome:DigitalMonetaryObject;
-    rdfs:range rome:Control;
-    rdfs:subPropertyOf gufo:mediates.
-:validMonetaryObjectMediatesControl rdf:type owl:ObjectProperty;
-    rdfs:domain rome:ValidMonetaryObject;
-    rdfs:range rome:Control;
-    rdfs:subPropertyOf gufo:mediates.
-:monetaryCreditIsComponentOfMonetaryAuthorityCreditDebtRelation rdf:type owl:ObjectProperty;
-    rdfs:domain rome:MonetaryCredit;
-    rdfs:range rome:MonetaryAuthorityCreditDebtRelation;
-    rdfs:subPropertyOf gufo:isComponentOf.
-:monetaryDebtIsComponentOfMonetaryAuthorityCreditDebtRelation rdf:type owl:ObjectProperty;
-    rdfs:domain rome:MonetaryDebt;
-    rdfs:range rome:MonetaryAuthorityCreditDebtRelation;
-    rdfs:subPropertyOf gufo:isComponentOf.
-:inheresIn_2 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:MonetaryDebt;
-    rdfs:range rome:MonetaryAuthority;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:inheresIn_4 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:MonetaryCredit;
-    rdfs:range rome:Agent;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:isDebitor rdf:type owl:ObjectProperty;
-    rdfs:domain rome:MonetaryAuthorityCreditDebtRelation;
-    rdfs:range rome:MonetaryAuthority;
-    rdfs:label "is debitor";
-    rdfs:subPropertyOf gufo:mediates.
-:isCreditor_1 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:MonetaryAuthorityCreditDebtRelation;
-    rdfs:range rome:Agent;
-    rdfs:label "is creditor";
-    rdfs:subPropertyOf gufo:mediates.
-:inheresIn_1 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:Control;
-    rdfs:range rome:Agent;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:controlMediatesTokenBasedCreditDebt rdf:type owl:ObjectProperty;
-    rdfs:domain rome:Control;
-    rdfs:range rome:TokenBasedCreditDebt;
-    rdfs:subPropertyOf gufo:mediates.
-:fiMonetaryCreditIsComponentOfFinancialInstitutionCreditDebtRelation rdf:type owl:ObjectProperty;
-    rdfs:domain rome:FIMonetaryCredit;
-    rdfs:range rome:FinancialInstitutionCreditDebtRelation;
-    rdfs:subPropertyOf gufo:isComponentOf.
-:fiMonetaryDebtIsComponentOfFinancialInstitutionCreditDebtRelation rdf:type owl:ObjectProperty;
-    rdfs:domain rome:FIMonetaryDebt;
-    rdfs:range rome:FinancialInstitutionCreditDebtRelation;
-    rdfs:subPropertyOf gufo:isComponentOf.
-:isCreditor rdf:type owl:ObjectProperty;
-    rdfs:domain rome:FinancialInstitutionCreditDebtRelation;
-    rdfs:range rome:Agent;
-    rdfs:label "is creditor";
-    rdfs:subPropertyOf gufo:mediates.
-:isDebitor_1 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:FinancialInstitutionCreditDebtRelation;
-    rdfs:range rome:FinancialInstitution;
-    rdfs:label "is debitor";
-    rdfs:subPropertyOf gufo:mediates.
-:inhersIn rdf:type owl:ObjectProperty;
-    rdfs:domain rome:FIMonetaryDebt;
-    rdfs:range rome:FinancialInstitution;
-    rdfs:label "inhers in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:inheresIn_3 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:FIMonetaryCredit;
-    rdfs:range rome:Agent;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:pricingMediatesObject rdf:type owl:ObjectProperty;
-    rdfs:domain rome:Pricing;
-    rdfs:range rome:Object;
-    rdfs:subPropertyOf gufo:mediates.
-:pricingHasAgent rdf:type owl:ObjectProperty;
+    rdfs:label "structures"@en.
+rome:pricingHasAgent rdf:type owl:ObjectProperty;
     rdfs:domain rome:Pricing;
     rdfs:range rome:Agent.
-:inheresIn_5 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:Price;
-    rdfs:range rome:Pricing;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:purchasingPowerExternallyDependsOnPrice rdf:type owl:ObjectProperty;
-    rdfs:domain rome:PurchasingPower;
-    rdfs:range rome:Price;
-    rdfs:subPropertyOf gufo:externallyDependsOn.
-:inheresIn_7 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:PurchasingPower;
-    rdfs:range rome:Agent;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:groundedOn_1 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:ExchangePower;
-    rdfs:range rome:MonetaryAuthorityCreditDebtRelation;
-    rdfs:label "grounded on";
-    rdfs:subPropertyOf gufo:externallyDependsOn.
-:groundedOn_3 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:ExchangePower;
-    rdfs:range rome:FinancialInstitutionCreditDebtRelation;
-    rdfs:label "grounded on";
-    rdfs:subPropertyOf gufo:externallyDependsOn.
-:inheresIn rdf:type owl:ObjectProperty;
-    rdfs:domain rome:Agent;
-    rdfs:range rome:ExchangePower;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:groundedOn_2 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:AggregatedExchangePower;
-    rdfs:range rome:PurchasingPower;
-    rdfs:label "grounded on";
-    rdfs:subPropertyOf gufo:externallyDependsOn.
-:inheresIn_10 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:AggregatedExchangePower;
-    rdfs:range rome:Agent;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:exchangePowerIsComponentOfAggregatedExchangePower rdf:type owl:ObjectProperty;
-    rdfs:domain rome:ExchangePower;
-    rdfs:range rome:AggregatedExchangePower;
-    rdfs:subPropertyOf gufo:isComponentOf.
 rome:VirtualCurrencyToken gufo:categorizes rome:VirtualCurrencyTokenType.
-:structures_1 rdf:type owl:ObjectProperty;
+rome:structures_1 rdf:type owl:ObjectProperty;
     rdfs:domain rome:VirtualCurrencyQualityStructure;
     rdfs:range rome:VirtualCurrencyQualitySpace;
-    rdfs:label "structures".
-:defines_4 rdf:type owl:ObjectProperty;
+    rdfs:label "structures"@en.
+rome:defines_4 rdf:type owl:ObjectProperty;
     rdfs:domain rome:VirtualCurrencySchemeDescription;
     rdfs:range rome:VirtualCurrencyQualityStructure;
-    rdfs:label "defines".
-:defines_1 rdf:type owl:ObjectProperty;
+    rdfs:label "defines"@en.
+rome:defines_1 rdf:type owl:ObjectProperty;
     rdfs:domain rome:VirtualCurrencySchemeDescription;
     rdfs:range rome:VirtualCurrency;
-    rdfs:label "defines".
-:defines rdf:type owl:ObjectProperty;
+    rdfs:label "defines"@en.
+rome:defines rdf:type owl:ObjectProperty;
     rdfs:domain rome:VirtualCurrencySchemeDescription;
     rdfs:range rome:VirtualCurrencyTokenType;
-    rdfs:label "defines".
-:virtualCurrencyQualityStructureIsComponentOfVirtualCurrency rdf:type owl:ObjectProperty;
+    rdfs:label "defines"@en.
+rome:admits_1 rdf:type owl:ObjectProperty;
     rdfs:domain rome:VirtualCurrencyQualityStructure;
     rdfs:range rome:VirtualCurrency;
-    rdfs:subPropertyOf gufo:isComponentOf.
-:virtualCurrencyTokenTypeIsComponentOfVirtualCurrency rdf:type owl:ObjectProperty;
+    rdfs:label "admits"@en.
+rome:admits rdf:type owl:ObjectProperty;
     rdfs:domain rome:VirtualCurrencyTokenType;
     rdfs:range rome:VirtualCurrency;
-    rdfs:subPropertyOf gufo:isComponentOf.
-:isComponentOf_2 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:NormativeDescription;
-    rdfs:range rome:VirtualCurrencySystem;
-    rdfs:label "is component of";
-    rdfs:subPropertyOf gufo:isObjectProperPartOf.
-:isComponentOf rdf:type owl:ObjectProperty;
-    rdfs:domain rome:Agent;
-    rdfs:range rome:VirtualCurrencySystem;
-    rdfs:label "is component of";
-    rdfs:subPropertyOf gufo:isObjectProperPartOf.
-:institutionBasedTrustExternallyDependsOnVirtualCurrencySystem rdf:type owl:ObjectProperty;
-    rdfs:domain rot:InstitutionBasedTrust;
-    rdfs:range rome:VirtualCurrencySystem;
-    rdfs:subPropertyOf gufo:externallyDependsOn.
-:virtualCurrencyTokenMediatesVcControl rdf:type owl:ObjectProperty;
-    rdfs:domain rome:VirtualCurrencyToken;
-    rdfs:range rome:VCControl;
-    rdfs:subPropertyOf gufo:mediates.
-:vcControlMediatesAgent rdf:type owl:ObjectProperty;
-    rdfs:domain rome:VCControl;
-    rdfs:range rome:Agent;
-    rdfs:subPropertyOf gufo:mediates.
-:groundedOn_4 rdf:type owl:ObjectProperty;
+    rdfs:label "admits"@en.
+rome:groundedOn_4 rdf:type owl:ObjectProperty;
     rdfs:domain rome:ExchangePowerInVC;
     rdfs:range rome:VCControl;
-    rdfs:label "grounded on".
-:inheresIn_6 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:ExchangePowerInVC;
-    rdfs:range rome:Agent;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-:bidirectionalFlowVcTokenMediatesBidirectionalVcControl rdf:type owl:ObjectProperty;
-    rdfs:domain rome:BidirectionalFlowVCToken;
-    rdfs:range rome:BidirectionalVCControl;
-    rdfs:subPropertyOf gufo:mediates.
-:bidirectionalVcControlMediatesAgent rdf:type owl:ObjectProperty;
-    rdfs:domain rome:BidirectionalVCControl;
-    rdfs:range rome:Agent;
-    rdfs:subPropertyOf gufo:mediates.
-:groundedOn rdf:type owl:ObjectProperty;
+    rdfs:label "grounded on"@en.
+rome:groundedOn rdf:type owl:ObjectProperty;
     rdfs:domain rome:ExchangePowerInCurrency;
     rdfs:range rome:BidirectionalVCControl;
-    rdfs:label "grounded on".
-:inheresIn_8 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:Agent;
-    rdfs:range rome:ExchangePowerInCurrency;
-    rdfs:label "inheres in";
-    rdfs:subPropertyOf gufo:inheresIn.
-    
-    
-    
-##################################################################    Restrictions#################################################################
-
+    rdfs:label "grounded on"@en.
 rome:Agent rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :inheresIn_9 ];
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
   owl:someValuesFrom rot:InstitutionBasedTrust
 ].
 rot:InstitutionBasedTrust rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :inheresIn_9;
+  owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
 rome:MonetarySystem rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :externalyDependentOn ];
+  owl:onProperty [ owl:inverseOf gufo:externallyDependsOn ];
   owl:someValuesFrom rot:InstitutionBasedTrust
 ].
 rot:InstitutionBasedTrust rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :externalyDependentOn;
+  owl:onProperty gufo:externallyDependsOn;
   owl:someValuesFrom rome:MonetarySystem
+].
+rome:VirtualCurrencySystem rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:externallyDependsOn ];
+  owl:someValuesFrom rot:InstitutionBasedTrust
+].
+rot:InstitutionBasedTrust rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:externallyDependsOn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass rome:VirtualCurrencySystem
+].
+rome:ExchangePower rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass rome:Agent
+].
+rome:ExchangePowerInCurrency rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass rome:Agent
 ].
 rome:Control rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :digitalMonetaryObjectMediatesControl ];
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:DigitalMonetaryObject
 ].
 rome:DigitalMonetaryObject rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :digitalMonetaryObjectMediatesControl;
+  owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Control
 ].
 rome:Control rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :validMonetaryObjectMediatesControl ];
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:ValidMonetaryObject
 ].
 rome:MonetaryDebt rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :inheresIn_2;
+  owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:MonetaryAuthority
 ].
 rome:MonetaryCredit rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :inheresIn_4;
+  owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
 rome:MonetaryAuthority rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :isDebitor ];
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
   owl:someValuesFrom rome:MonetaryAuthorityCreditDebtRelation
 ].
 rome:MonetaryAuthorityCreditDebtRelation rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :isDebitor;
+  owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:MonetaryAuthority
 ], [
   rdf:type owl:Restriction;
-  owl:onProperty :isCreditor_1;
+  owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
 rome:Control rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :inheresIn_1;
+  owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
 rome:TokenBasedCreditDebt rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :controlMediatesTokenBasedCreditDebt ];
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Control
 ].
 rome:Control rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :controlMediatesTokenBasedCreditDebt;
+  owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:TokenBasedCreditDebt
 ].
 rome:FinancialInstitutionCreditDebtRelation rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :isCreditor;
+  owl:onProperty gufo:mediates;
   owl:someValuesFrom rome:Agent
 ], [
   rdf:type owl:Restriction;
-  owl:onProperty :isDebitor_1;
+  owl:onProperty gufo:mediates;
   owl:someValuesFrom rome:FinancialInstitution
 ].
 rome:FIMonetaryDebt rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :inhersIn;
+  owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:FinancialInstitution
 ].
 rome:FIMonetaryCredit rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :inheresIn_3;
+  owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
 rome:Pricing rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :pricingMediatesObject;
+  owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Object
 ], [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :inheresIn_5 ];
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Price
 ].
 rome:Price rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :inheresIn_5;
+  owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Pricing
 ].
 rome:PurchasingPower rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :purchasingPowerExternallyDependsOnPrice;
+  owl:onProperty gufo:externallyDependsOn;
   owl:someValuesFrom rome:Price
 ], [
   rdf:type owl:Restriction;
-  owl:onProperty :inheresIn_7;
+  owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
 rome:MonetaryAuthorityCreditDebtRelation rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :groundedOn_1 ];
+  owl:onProperty [ owl:inverseOf gufo:externallyDependsOn ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:ExchangePower
 ].
 rome:ExchangePower rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :groundedOn_1;
+  owl:onProperty gufo:externallyDependsOn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:MonetaryAuthorityCreditDebtRelation
 ].
 rome:FinancialInstitutionCreditDebtRelation rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :groundedOn_3 ];
+  owl:onProperty [ owl:inverseOf gufo:externallyDependsOn ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:ExchangePower
 ].
 rome:ExchangePower rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :groundedOn_3;
+  owl:onProperty gufo:externallyDependsOn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:FinancialInstitutionCreditDebtRelation
-], [
-  rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :inheresIn ];
-  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass rome:Agent
 ].
 rome:PurchasingPower rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :groundedOn_2 ];
+  owl:onProperty [ owl:inverseOf gufo:externallyDependsOn ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:AggregatedExchangePower
 ].
 rome:AggregatedExchangePower rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :groundedOn_2;
+  owl:onProperty gufo:externallyDependsOn;
   owl:someValuesFrom rome:PurchasingPower
 ].
 rome:Agent rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :inheresIn_10 ];
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:AggregatedExchangePower
 ].
 rome:AggregatedExchangePower rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :inheresIn_10;
+  owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
-rome:VirtualCurrencySystem rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :institutionBasedTrustExternallyDependsOnVirtualCurrencySystem ];
-  owl:someValuesFrom rot:InstitutionBasedTrust
-].
-rot:InstitutionBasedTrust rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty :institutionBasedTrustExternallyDependsOnVirtualCurrencySystem;
-  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass rome:VirtualCurrencySystem
-].
 rome:VCControl rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :virtualCurrencyTokenMediatesVcControl ];
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:VirtualCurrencyToken
 ].
 rome:VirtualCurrencyToken rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :virtualCurrencyTokenMediatesVcControl;
+  owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:VCControl
 ].
 rome:VCControl rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :vcControlMediatesAgent;
+  owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
 rome:ExchangePowerInVC rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :inheresIn_6;
+  owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
 rome:BidirectionalVCControl rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :bidirectionalFlowVcTokenMediatesBidirectionalVcControl ];
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:BidirectionalFlowVCToken
 ].
 rome:BidirectionalFlowVCToken rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :bidirectionalFlowVcTokenMediatesBidirectionalVcControl;
+  owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:BidirectionalVCControl
 ].
 rome:BidirectionalVCControl rdfs:subClassOf [
   rdf:type owl:Restriction;
-  owl:onProperty :bidirectionalVcControlMediatesAgent;
+  owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
-rome:ExchangePowerInCurrency rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf :inheresIn_8 ];
-  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass rome:Agent
-].
-
-
-##################################################################    General axioms#################################################################
-
-[ rdf:type owl:AllDisjointClasses ] owl:members (rome:Currency rome:CurrencyQualitySpaceStructure rome:MonetarySystem rome:VirtualCurrency rome:VirtualCurrencyQualityStructure rome:VirtualCurrencySystem).
-[ rdf:type owl:AllDisjointClasses ] owl:members (rome:Control rome:FinancialInstitutionCreditDebtRelation rome:MonetaryAuthorityCreditDebtRelation rome:Pricing rome:BidirectionalVCControl rome:VCControl).
-[ rdf:type owl:AllDisjointClasses ] owl:members (rome:PurchasingPower rome:AggregatedExchangePower rome:ExchangePower rome:ExchangePowerInCurrency rome:ExchangePowerInVC rot:InstitutionBasedTrust).
-[ rdf:type owl:AllDisjointClasses ] owl:members (rome:FIMonetaryCredit rome:FIMonetaryDebt rome:MonetaryCredit rome:MonetaryDebt rome:Price).
