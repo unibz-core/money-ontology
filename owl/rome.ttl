@@ -14,7 +14,7 @@ owl:imports gufo: ;
                                           "Guizzardi, Giancarlo" ,
                                           "Porello, Daniele" ,
                                           "Sales, Tiago Prince" ;                                  
-<http://purl.org/dc/elements/1.1/date> "2020-02-16" ;                                  
+<http://purl.org/dc/elements/1.1/date> "2022-02-21" ;                                  
 <http://purl.org/dc/elements/1.1/rights> "This work is distributed under Creative Commons Attribution License CC BY 4.0 
 <https://creativecommons.org/licenses/by/4.0/legalcode>"@en ;                                  
 <http://purl.org/dc/elements/1.1/title> "Reference Ontology of Money and Virtual CurrEncies"@en ;                                  
@@ -81,8 +81,8 @@ rome:MonetaryDebt rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
 rome:MonetaryAuthority rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Monetary Authority"@en.
-rome:TokenBasedCreditDebt rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Token-based Credit/Debt"@en.
+rome:ObjectBasedCreditDebt rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Object-based Credit/Debt"@en.
 rome:AccountBasedCreditDebt rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
     rdfs:label "Account-based Credit/Debt"@en.
 rome:FinancialInstitutionCreditDebtRelation rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
@@ -166,13 +166,13 @@ rome:PhysicalMonetaryObject rdfs:subClassOf rome:MonetaryObject.
 rome:DigitalMonetaryObject rdfs:subClassOf rome:MonetaryObject.
 rome:NotValidMonetaryObject rdfs:subClassOf rome:PhysicalMonetaryObject.
 rome:ValidMonetaryObject rdfs:subClassOf rome:PhysicalMonetaryObject.
-rome:TokenBasedCreditDebt rdfs:subClassOf rome:MonetaryAuthorityCreditDebtRelation.
+rome:ObjectBasedCreditDebt rdfs:subClassOf rome:MonetaryAuthorityCreditDebtRelation.
 rome:AccountBasedCreditDebt rdfs:subClassOf rome:MonetaryAuthorityCreditDebtRelation.
 rome:PurchasebleVCToken rdfs:subClassOf rome:VirtualCurrencyToken.
 rome:ClosedVCToken rdfs:subClassOf rome:VirtualCurrencyToken.
 rome:UnidirectionalFlowVCToken rdfs:subClassOf rome:PurchasebleVCToken.
 rome:BidirectionalFlowVCToken rdfs:subClassOf rome:PurchasebleVCToken.
-[ rdf:type owl:AllDisjointClasses ] owl:members (rome:AccountBasedCreditDebt rome:TokenBasedCreditDebt).
+[ rdf:type owl:AllDisjointClasses ] owl:members (rome:AccountBasedCreditDebt rome:ObjectBasedCreditDebt).
 rome:VirtualCurrencyToken owl:equivalentClass [
   rdf:type owl:Class;
   owl:unionOf (rome:ClosedVCToken rome:PurchasebleVCToken)
@@ -415,7 +415,7 @@ rome:Control rdfs:subClassOf [
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
-rome:TokenBasedCreditDebt rdfs:subClassOf [
+rome:ObjectBasedCreditDebt rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty [ owl:inverseOf gufo:mediates ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
@@ -425,7 +425,7 @@ rome:Control rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass rome:TokenBasedCreditDebt
+  owl:onClass rome:ObjectBasedCreditDebt
 ].
 rome:FinancialInstitutionCreditDebtRelation rdfs:subClassOf [
   rdf:type owl:Restriction;
