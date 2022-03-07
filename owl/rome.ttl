@@ -1,6 +1,6 @@
 @prefix : <https://purl.org/krdb-core/rome#>.
 @prefix rot: <https://purl.org/krdb-core/rot#>.
-@prefix rome: <https://purl.org/krdb-core/rome#>.
+@prefix rome: <https://purl.org/krdb-core/rome/rome#>.
 @prefix gufo: <http://purl.org/nemo/gufo#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
@@ -8,23 +8,20 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
 
-<https://purl.org/krdb-core/rome> rdf:type owl:Ontology ;
-owl:imports gufo: ;                                  
+<https://purl.org/krdb-core/rome> rdf:type owl:Ontology;
+    owl:imports gufo:;   
 <http://purl.org/dc/elements/1.1/creator> "Amaral, Glenda" ,
                                           "Guizzardi, Giancarlo" ,
                                           "Porello, Daniele" ,
                                           "Sales, Tiago Prince" ;                                  
-<http://purl.org/dc/elements/1.1/date> "2022-02-21" ;                                  
+<http://purl.org/dc/elements/1.1/date> "2022-03-07" ;                                  
 <http://purl.org/dc/elements/1.1/rights> "This work is distributed under Creative Commons Attribution License CC BY 4.0 
 <https://creativecommons.org/licenses/by/4.0/legalcode>"@en ;                                  
 <http://purl.org/dc/elements/1.1/title> "Reference Ontology of Money and Virtual CurrEncies"@en ;                                  
 rdfs:comment "The Reference Ontology of Money and Virtual CurrEncies (ROME) is a well-founded reference ontology, originally developed in OntoUML, that formally characterizes the concept of money, currency, virtual currencies and related concepts."@en ;                                  
-rdfs:label "Reference Ontology of Money and Virtual CurrEncies"@en .
-
-
-
-<https://purl.org/krdb-core/rome> rdf:type owl:Ontology;
-    owl:imports gufo:.  
+rdfs:label "Reference Ontology of Money and Virtual CurrEncies"@en .    
+    
+    
 rot:InstitutionBasedTrust rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:ExtrinsicMode;
     rdfs:label "Institution-based Trust"@en.
@@ -83,8 +80,8 @@ rome:MonetaryAuthority rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
     rdfs:label "Monetary Authority"@en.
 rome:ObjectBasedCreditDebt rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
     rdfs:label "Object-based Credit/Debt"@en.
-rome:AccountBasedCreditDebt rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Account-based Credit/Debt"@en.
+rome:RegistryBasedCreditDebt rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Registry-based Credit/Debt"@en.
 rome:FinancialInstitutionCreditDebtRelation rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:Relator;
     rdfs:label "Financial Institution Credit/Debt Relation"@en.
@@ -142,8 +139,7 @@ rome:VCControl rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
 rome:ExchangePowerInVC rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:IntrinsicMode;
     rdfs:label "Exchange Power in VC"@en.
-rome:BidirectionalVCControl rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Relator;
+rome:BidirectionalVCControl rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
     rdfs:label "Bidirectional VC Control"@en.
 rome:ExchangePowerInCurrency rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:IntrinsicMode;
@@ -167,15 +163,16 @@ rome:DigitalMonetaryObject rdfs:subClassOf rome:MonetaryObject.
 rome:NotValidMonetaryObject rdfs:subClassOf rome:PhysicalMonetaryObject.
 rome:ValidMonetaryObject rdfs:subClassOf rome:PhysicalMonetaryObject.
 rome:ObjectBasedCreditDebt rdfs:subClassOf rome:MonetaryAuthorityCreditDebtRelation.
-rome:AccountBasedCreditDebt rdfs:subClassOf rome:MonetaryAuthorityCreditDebtRelation.
+rome:RegistryBasedCreditDebt rdfs:subClassOf rome:MonetaryAuthorityCreditDebtRelation.
 rome:PurchasebleVCToken rdfs:subClassOf rome:VirtualCurrencyToken.
 rome:ClosedVCToken rdfs:subClassOf rome:VirtualCurrencyToken.
 rome:UnidirectionalFlowVCToken rdfs:subClassOf rome:PurchasebleVCToken.
 rome:BidirectionalFlowVCToken rdfs:subClassOf rome:PurchasebleVCToken.
-[ rdf:type owl:AllDisjointClasses ] owl:members (rome:AccountBasedCreditDebt rome:ObjectBasedCreditDebt).
+rome:BidirectionalVCControl rdfs:subClassOf rome:VCControl.
+[ rdf:type owl:AllDisjointClasses ] owl:members (rome:ObjectBasedCreditDebt rome:RegistryBasedCreditDebt).
 rome:VirtualCurrencyToken owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (rome:ClosedVCToken rome:PurchasebleVCToken)
+  owl:unionOf (rome:PurchasebleVCToken rome:ClosedVCToken)
 ].
 rome:PurchasebleVCToken owl:equivalentClass [
   rdf:type owl:Class;
@@ -183,11 +180,11 @@ rome:PurchasebleVCToken owl:equivalentClass [
 ].
 rome:MonetaryObject owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (rome:DigitalMonetaryObject rome:PhysicalMonetaryObject)
+  owl:unionOf (rome:PhysicalMonetaryObject rome:DigitalMonetaryObject)
 ].
 rome:PhysicalMonetaryObject owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (rome:NotValidMonetaryObject rome:ValidMonetaryObject)
+  owl:unionOf (rome:ValidMonetaryObject rome:NotValidMonetaryObject)
 ].
 <monetaryObject:nominal_value> rdfs:domain rome:MonetaryObject;
     rdf:type owl:DatatypeProperty;
@@ -221,6 +218,14 @@ rome:PhysicalMonetaryObject owl:equivalentClass [
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
     rdfs:label "price_value"@en.
+<exchangePower:exchange_power_value> rdfs:domain rome:ExchangePower;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "exchange_power_value"@en.
+<aggregatedExchangePower:aggregated_exchange_power_value> rdfs:domain rome:AggregatedExchangePower;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "aggregated_exchange_power_value"@en.
 <virtualCurrencyToken:vc_token_value> rdfs:domain rome:VirtualCurrencyToken;
     rdf:type owl:DatatypeProperty;
     rdfs:subPropertyOf gufo:hasQualityValue;
@@ -242,22 +247,6 @@ rome:recognizedBy rdf:type owl:ObjectProperty;
     rdfs:domain rome:NormativeDescription;
     rdfs:range rome:Agent;
     rdfs:label "recognized by"@en.
-rome:isComponentOf_1 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:Agent;
-    rdfs:range rome:MonetarySystem;
-    rdfs:label "is component of"@en.
-rome:isComponentOf_3 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:NormativeDescription;
-    rdfs:range rome:MonetarySystem;
-    rdfs:label "is component of"@en.
-rome:isComponentOf_2 rdf:type owl:ObjectProperty;
-    rdfs:domain rome:NormativeDescription;
-    rdfs:range rome:VirtualCurrencySystem;
-    rdfs:label "is component of"@en.
-rome:isComponentOf rdf:type owl:ObjectProperty;
-    rdfs:domain rome:Agent;
-    rdfs:range rome:VirtualCurrencySystem;
-    rdfs:label "is component of"@en.
 rome:MonetaryObject gufo:categorizes rome:MonetaryObjectType.
 rome:defines_3 rdf:type owl:ObjectProperty;
     rdfs:domain rome:MoneyStatusFunctionDescription;
@@ -363,23 +352,23 @@ rome:ExchangePowerInCurrency rdfs:subClassOf [
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Agent
 ].
-rome:Control rdfs:subClassOf [
+rome:DigitalMonetaryObject rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty [ owl:inverseOf gufo:mediates ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass rome:DigitalMonetaryObject
-].
-rome:DigitalMonetaryObject rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty gufo:mediates;
-  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass rome:Control
 ].
 rome:Control rdfs:subClassOf [
   rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass rome:DigitalMonetaryObject
+].
+rome:ValidMonetaryObject rdfs:subClassOf [
+  rdf:type owl:Restriction;
   owl:onProperty [ owl:inverseOf gufo:mediates ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass rome:ValidMonetaryObject
+  owl:onClass rome:Control
 ].
 rome:MonetaryDebt rdfs:subClassOf [
   rdf:type owl:Restriction;
